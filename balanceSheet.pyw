@@ -3,9 +3,6 @@ import pandas as pd
 df = pd.read_csv('bs.csv', 
                  names=('ass', 'ass_value', 'lia', 'lia_value'), encoding="SHIFT-JIS")
 
-#from IPython.display import display
-#display(df)
-
 Current = ["現預金", "売掛金", "流動負債", "その他流動資産"]
 Long = ["有形固定資産", "無形固定資産", "投資その他の資産", "固定負債"]
 
