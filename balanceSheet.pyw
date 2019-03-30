@@ -12,9 +12,6 @@ for value in df.ass_value:
     length += int(value.replace(",", ""))
     
 def graph(x, data, data_name, color1, color2):
-    ax.set_xlim(-1, 1)
-    ax.set_ylim(0, length)
-    ax.tick_params(labelbottom=False, labelleft=False, left=False, bottom=False)
     cum = 0
     for i in range(0, len(data))[::-1]:
         if data_name[i] in Current:
@@ -33,6 +30,10 @@ def graph(x, data, data_name, color1, color2):
 
 fig, ax = plt.subplots(figsize=(5, 4))
 fig.suptitle("Total Assess:{:,}".format(length))
+ax.set_xlim(-1, 1)
+ax.set_ylim(0, length)
+ax.tick_params(labelbottom=False, labelleft=False, left=False, bottom=False)
+
 graph(-0.5, df.ass_value, df.ass, "#b2d8ff", "#7fbfff")
 graph(0.5, df.lia_value, df.lia, "#ffb2b2", "#ff7f7f")
 
